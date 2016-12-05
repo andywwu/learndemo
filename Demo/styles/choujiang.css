@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* C*{SS Document */
+*{
+	margin:0;
+	padding:0;
+	}
+.title{
+	color:#ooo;
+	width:400px;
+	height:70px;
+	margin:0 auto;
+	padding-top:20px;
+	font-weight::bold;
+	text-align:center;
+	font-size:30px;
+	font-family::"宋体";
+	}
+.btns{width:230px;
+      height:120px;
+	  margin:0 auto;
+
+	}
+.btns span{
+	diplay:block;
+    float:left;
+	height:28px;
+	width:80px; 
+	border:1px solid #eee;
+	border-radius:7px;
+	line-height:28px;
+	background:#036;
+	text-align:center;
+	color:#fff;
+	margin-left:20px;  
+	font-size:14px;
+	font-family:"微软雅黑";
+	cursor:pointer;             
+	}
+.text{
+	font-size:30px;
+	text-align:center;
+    font-family:"楷体";
+	color:#F80206;
+	margin:20px;
+	}

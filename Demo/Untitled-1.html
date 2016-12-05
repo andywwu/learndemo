@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试</title>
+<style type="text/css">
+  *{margin:0;padding:0;font:20px normal;font-family:"微软雅黑";}
+  #tabs{
+	  height:300px;width:400px;margin:20px;padding:5px;
+	  }
+  #tabs ul{
+	  list-style:none;height:40px;line-height:40px;border-bottom:2px red solid;
+	  }
+  #tabs ul li{
+	  float:left;width:70px;height:38px;border:1px #CBC9C9 solid;text-align:center;
+	  margin-left:5px;border-bottom:none;
+	  }
+#tabs ul li.on{
+	 border-top:2px red solid;border-bottom:2px #fff solid;border-left:2px red solid;border-right:2px red solid;
+	 }
+#cont div{
+	height:200px;width:386px;border:2px red solid;border-top:none;padding:5px;
+	}
+#cont div.cont1{
+	display:none;
+	}
+</style>
+<script type="text/javascript">
+  window.onload=function(){
+	  var tabs=document.getElementById("tabs");
+	  var lis=document.getElementsByTagName("li");
+	  var cont=document.getElementById("cont");
+	  var div=cont.getElementsByTagName("div");
+	  for(var i=0;i<lis.length;i++){
+		  lis[i].index=i;
+		  lis[i].onclick=function(){
+			 for(var j=0;j<lis.length;j++){
+				 lis[j].className="";
+				 div[j].className="cont1";
+				 }
+			  this.className="on";
+			  div[this.index].className="";
+			  }
+		  }
+	  }
+</script>
+</head>
+
+<body>
+  <div id="tabs">
+    <ul>
+      <li class="on">男装</li>
+      <li>女装</li>
+      <li>儿童装</li>
+    </ul>
+    <div id="cont">
+       <div>111</div>
+       <div class="cont1">222</div>
+       <div class="cont1">333</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>星期demo</title>
+<style type="text/css">
+  *{margin:0;padding:0;}
+  body{background-color:#f6f9fc;font-family:Arial;}
+  .wek{width:210px;margin:50px auto 0;padding:10px 1opx 20px 20px;background-color:#eae9e9;}
+  .wek ul{width: 210px; overflow: hidden; padding-bottom: 10px;list-style:none;margin-left:5px;}
+  .wek ul li{cursor: pointer;float: left; width: 58px; height: 54px; margin: 10px 10px 0 0; border: 1px solid #fff; background: #424242; color: #fff; text-align: center; cursor: pointer; 
+}
+  .wek ul li h2{font-size:20px;padding-top:5px;}
+  .wek ul li p{font-size:14px;}
+  .wek ul li.active{background:#fff;border: 1px solid #424242;color:#000000;};
+  .wek ul li.active h2{}
+  .wek ul li.active p{font-weight:bold;}
+ .text { width: 178px; padding: 0 10px 10px; border: 1px solid #fff; padding-top: 10px; background: #f1f1f1; color: #555; margin-left:5px;}
+.text h2 {font-size: 14px; margin-bottom: 10px; }
+ .text p { font-size: 12px; line-height: 18px; }
+</style>
+<script type="text/javascript">
+  window.onload=function(){
+	 var aDatas=[
+	"学习HTML --11月7日",
+	"学习CSS  --11月8日",
+	"学习JavaScript  --11月9日",
+	"学习jQuery  --11月10日",
+	"学习Ajax--11月11日",
+	"学习Bootstrap  --11月12日",
+	"学习React Native  --11月13日 "
+	];
+     var achar=["一","二","三","四","五","六","日"]
+	 var tabs=document.getElementById("tabs");
+	 var lis=tabs.getElementsByTagName("li");
+	 var text=tabs.getElementsByTagName("div")[0];
+	 for(var i=0;i<lis.length;i++){
+		 lis[i].index = i; 
+		 lis[i].onmouseover=function(){
+			 for(var i=0;i<lis.length;i++){
+				 lis[i].className="";
+				 }
+				this.className="active"; 
+				text.innerHTML='<h2>星期'+achar[this.index]+'活动</h2><p>'+aDatas[this.index]+'</p>';
+			 }
+		 }
+	  }
+</script>
+</head>
+<body>
+  <div id="tabs" class="wek">
+    <ul>
+      <li class="active"><h2>1</h2><p>Mon</p></li>
+      <li><h2>2</h2><p>Tues</p></li>
+      <li><h2>3</h2><p>Wed</p></li>
+      <li><h2>4</h2><p>Thu</p></li>
+      <li><h2>5</h2><p>Fri</p></li>
+      <li><h2>6</h2><p>Sat</p></li>
+      <li><h2>7</h2><p>Sun</p></li>
+    </ul>
+        <div class="text">
+        <h2>星期一活动</h2>
+        <p>学习HTML --11月7日</p>
+    </div>
+  </div>
+</body>
+</html>

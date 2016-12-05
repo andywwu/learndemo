@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	font-family:'microsoft yahei';
+	}
+#move{
+    background:#F8F8F8;
+	width:300px;
+	height:280px;
+	position:relative;
+    margin:0 auto;
+	top:50px;
+	border:1px solid #ccc;
+	border-radius:12px;
+	}
+#move a{
+	float:left;
+	height:25px;
+	width:58px;
+	margin:10px 20px;
+	border:1px solid #ddd;
+    border-radius:5px;
+	text-align:center;
+	display:inline-block;
+	position:relative;
+	background-color:#fff;
+	color:#9c9c9c;
+	padding-top:40px;
+	font-size:12px;
+	text-decoration:none;
+	line-height:25px;
+	overflow:hidden;
+	}
+#move a i{
+	position:absolute;
+	top:6px;
+	left:10px;
+	text-align:center;
+	filter:alpha(opacity:100);
+	opacity:1;
+	}
+#move a:hover{
+	color:#f00;
+	}
+#move img{
+	border:none;
+	}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;}
+body{font-family:"微软雅黑";	text-align:center;
+	font-size:12px;}
+a { color:#04D; text-decoration:none;}
+a:hover{color:#f50;text-decoration:underline;}
+.main {
+	width:600px;
+	margin:0 auto;
+	margin-top:20px;
+	text-align:center;
+	}
+.main ul{list-style:none;}
+.main ul li{float:left;display:block;width:150px;height:30px;line-height:30px;}
+.more{clear:both; text-align:center;padding-top:10px;}
+.more a{display:block; width:120px; margin:0 auto; line-height:24px; border:1px solid #AAA;}
+.more a span{background:url(images/down.gif)no-repeat 0 3px;;padding-left:15px;}
+.more1 a{color:#f50;}
+</style>
+<script type="text/javascript" src="javascripts/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  var $category=$("ul li:gt(5):not(:last)");
+	  $category.hide();
+	  var $btn=$('div.more>a');
+	  $btn.click(function(){
+		if($category.is(":visible")){
+			$category.hide();
+			$(this).find("span")
+			       .css("background","url(images/down.gif)no-repeat 0 3px")
+				   .text("显示全部");
+		    $("ul li").removeClass("more1");
+		}
+		else{
+		  $category.show();
+		  $(this).find("span")
+		  .css("background","url(images/up.gif)no-repeat 0 3px")
+		  .text("精简显示品牌");
+		  $("ul li").filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')")
+		            .addClass("more1");}
+		  return false;
+		  });
+	  });
+</script>
+</head>
+
+<body>
+  <div class="main">
+    <ul>
+      <li><a href="#">佳能</a><i>(30440)</i></li>
+      <li><a href="#">索尼</a><i>(30440)</i></li>
+      <li><a href="#">三星</a><i>(30440)</i></li>
+      <li><a href="#">尼康</a><i>(30440)</i></li>
+      <li><a href="#">松下</a><i>(30440)</i></li>
+      <li><a href="#">卡西欧</a><i>(30440)</i></li>
+      <li><a href="#">富士</a><i>(30440)</i></li>
+      <li><a href="#">柯达</a><i>(30440)</i></li>
+      <li><a href="#">宾得</a><i>(30440)</i></li>
+      <li><a href="#">理光</a><i>(30440)</i></li>
+      <li><a href="#">奥林巴斯</a><i>(30440)</i></li>
+      <li><a href="#">明基</a><i>(30440)</i></li>
+      <li><a href="#">爱国者</a><i>(30440)</i></li>
+      <li><a href="#">其他品牌相机</a><i>(30440)</i></li>
+    </ul>
+    <div class="more"><a href="#"><span>显示全部品牌</span></a></div>
+  </div>
+ 
+  <div></div>
+</body>
+</html>

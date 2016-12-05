@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title> 事件</title>   
+</head>
+<body>
+  <h1>操作成功！</h1>
+  <p><span id="time"></span>秒后回到主页<a href="javascript:goBack();">返回</a></p>
+  <input type="text" id="txt1" />
+  <select id="select">
+    <option value="+">+</option>
+	<option value="-">-</option>
+    <option value="*">*</option>
+	<option value="/">/</option>
+  </select>
+  <input type="text" id="txt2"/>
+  <input type="button" value=" = " onclick="count()"/>
+  <input type="text" id="fruit"/>
+  <script type="text/javascript">
+     var num=5;
+	 function timesGo(){
+	   num--;
+	   document.getElementById("time").innerHTML=num;
+	   if(num==0){
+	      location.assign("http://www.baidu.com");
+	   }
+	 }
+	 function goBack(){
+	   window.history.back();
+	 }
+	 setInterval(timesGo,1000);
+     function count(){
+	   var txt1=document.getElementById("txt1").value;
+	   var txt2=document.getElementById("txt2").value;
+	   var select=document.getElementById("select").value;
+	   var result;
+	   switch(select){
+	     case "+":
+		 result=parseInt(txt1)+parseInt(txt2);
+		 break;
+		 case "-":
+		 result=txt1-txt2;
+		 break;
+		 case "*":
+		 result=txt1*txt2;
+		 break;
+		 default:
+		 result=txt1/txt2;
+	   }
+	   document.getElementById("fruit").value=result;
+	 }
+   </script>
+</body>
+</html>

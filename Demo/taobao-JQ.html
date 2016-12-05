@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>taobao</title>
+<link type="text/css" rel="stylesheet" href="styles/tb.css"/>
+<script type="text/javascript" src="javascripts/jQuery.js"></script>
+<script type="text/javascript">
+  $(function(){
+	  $('#move a').mouseenter(function(){
+		  $(this).find('i').animate({top:"-40px",opacity:"0"},300,function(){
+			$(this).css({top:"50px"});
+			$(this).animate({top:"6px",opacity:"100"},300)
+			  })
+		  })
+	  })
+</script>
+</head>
+
+<body>
+<div id="move">
+  <a href="#"><i><img src="images/baoxian.png"/></i><p>保险</p></a>
+  <a href="#"><i><img src="images/email.png"/></i><p>邮箱</p></a>
+  <a href="#"><i><img src="images/game.png"/></i><p>游戏</p></a>
+  <a href="#"><i><img src="images/movie.png"/></i><p>电影</p></a>
+  <a href="#"><i><img src="images/travel.png"/></i><p>旅游</p></a>
+  <a href="#"><i><img src="images/telephone.png"/></i><p>缴费</p></a>
+  <a href="#"><i><img src="images/money.png"/></i><p>理财</p></a>
+  <a href="#"><i><img src="images/sell.png"/></i><p>二手</p></a>
+</div>
+</body>
+</html>

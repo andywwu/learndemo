@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>透明</title>
+<style type="text/css">
+   *{
+	 padding:0;
+	 margin:0;  
+	   }
+ #div1{
+	   width:150px;
+	   height:150px;
+	   line-height:150px;
+	   text-align:center;
+	   color:#fff;
+	   margin-left:20px;
+	   margin-top:20px;
+	   background-color:red;
+	   filter:alpha(opacity:30);
+	   opacity:0.3;
+	   float:left;
+	   border:1px solid black;
+	   }
+</style>
+<script type="text/javascript">
+  window.onload=function(){
+	  var div1=document.getElementById("div1");
+	  div1.onmouseover=function(){
+		  goChange(div1,"width",400,function(){
+			  goChange(div1,"height",300,function(){
+				  goChange(div1,"opacity",100);
+				  });
+			  });
+	  }
+	  div1.onmouseout=function(){
+		  goChange(div1,"opacity",30,function(){
+			  goChange(div1,"height",150,function(){
+				  goChange(div1,"width",30);
+				  });
+			  });
+		  
+      }
+	  //var timer=null;
+	  //var alpha=30;
+function goChange(obj,attr,target,fn){
+		 clearInterval(obj.timer); 
+		 obj.timer=setInterval(function(){
+			 var icur=0;
+			 if(attr=="opacity"){
+				icur=Math.round(parseFloat(getStyle(obj,attr))*100);
+				 }
+			 else{icur=parseInt(getStyle(obj,attr));}
+			 var speed=(target-icur)/8;
+			 speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			 if(icur==target){
+				 clearInterval(obj.timer);
+				 if(fn){
+					 fn();
+					 }
+				 }
+			 else{
+				 if(attr=="opacity"){
+					 //filter:alpha(opacity:);
+					 obj.style.filter="alpha(opacity:"+(icur+speed)+")";
+					 obj.style.opacity=(icur+speed)/100;
+					 }
+				 else{obj.style[attr]=icur+speed+"px";}
+				 }
+			 },30)
+		}
+		function getStyle(obj,attr){
+			if(obj.currentStyle){
+				return obj.currentStyle[attr];
+				}
+			 else{
+				 return getComputedStyle(obj,false)[attr];
+				 }	
+			}
+	  }
+</script>
+</head>
+
+<body>
+  <div id="div1">1</div>
+</body>
+</html>

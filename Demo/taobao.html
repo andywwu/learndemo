@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>taobao</title>
+<link type="text/css" rel="stylesheet" href="styles/tb.css"/>
+<script type="text/javascript" src="javascripts/goChange.js"></script>
+<script type="text/javascript">
+  window.onload=function(){
+	  var oMove=document.getElementById("move");
+	  var aList=oMove.getElementsByTagName("a");
+	  for(var i=0;i<aList.length;i++){
+		  aList[i].onmouseover=function(){
+			 var ithis=this.getElementsByTagName("i")[0];
+			  goChange(ithis,{top:-40,opacity:0},function(){
+				  ithis.style.top=40+"px";
+				  goChange(ithis,{top:6,opacity:100});
+				  });
+		   } 
+		}
+	  }
+</script>
+</head>
+
+<body>
+<div id="move">
+  <a href="#"><i><img src="images/baoxian.png"/></i><p>保险</p></a>
+  <a href="#"><i><img src="images/email.png"/></i><p>邮箱</p></a>
+  <a href="#"><i><img src="images/game.png"/></i><p>游戏</p></a>
+  <a href="#"><i><img src="images/movie.png"/></i><p>电影</p></a>
+  <a href="#"><i><img src="images/travel.png"/></i><p>旅游</p></a>
+  <a href="#"><i><img src="images/telephone.png"/></i><p>缴费</p></a>
+  <a href="#"><i><img src="images/money.png"/></i><p>理财</p></a>
+  <a href="#"><i><img src="images/sell.png"/></i><p>二手</p></a>
+</div>
+</body>
+</html>
